@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>New Releases | Vansh Antil</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="new-release.css">
+
+</head>
+<style>
+    /* =====================================================
+   VANSH ANTIL
+   NEW RELEASE PAGE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Montserrat", sans-serif;
+
+    color: #fff;
+    background: #07070b;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background-grid {
+    position: fixed;
+    inset: 0;
+
+    z-index: -10;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+}
+
+.background-glow {
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    opacity: .18;
+
+    z-index: -5;
+
+    pointer-events: none;
+}
+
+.glow-one {
+    top: -250px;
+    left: -200px;
+
+    background: #ff174f;
+
+    animation:
+        glowMoveOne 9s ease-in-out infinite alternate;
+}
+
+.glow-two {
+    right: -250px;
+    bottom: -250px;
+
+    background: #7b35ff;
+
+    animation:
+        glowMoveTwo 11s ease-in-out infinite alternate;
+}
+
+@keyframes glowMoveOne {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, 80px);
+    }
+}
+
+@keyframes glowMoveTwo {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-100px, -80px);
+    }
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    z-index: 1000;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(7,7,11,.78);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #fff;
+
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    box-shadow:
+        0 0 30px rgba(255,23,79,.3);
+
+    transition: .3s;
+}
+
+.logo:hover .logo-icon {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.logo-name span {
+    font-size: 19px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.logo-name small {
+    margin-top: 5px;
+
+    color: #ff3d68;
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+}
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.nav-links a {
+    padding: 11px 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    border-radius: 30px;
+
+    color: #888;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+
+    background:
+        rgba(255,255,255,.06);
+
+    transform: translateY(-2px);
+}
+
+.nav-links a.active {
+    color: #ff3d68;
+
+    background:
+        rgba(255,23,79,.08);
+}
+
+.nav-links i {
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.menu-btn {
+    width: 45px;
+    height: 45px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.05);
+}
+
+.menu-btn span {
+    width: 21px;
+    height: 2px;
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    transition: .3s;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.release-hero {
+    min-height: 55vh;
+
+    padding:
+        155px 7% 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+/* small title */
+
+.hero-small {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #888;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    animation:
+        fadeDown .8s ease both;
+}
+
+.hero-small span {
+    width: 35px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #8135ff
+        );
+}
+
+
+/* heading */
+
+.release-hero h1 {
+    margin-top: 25px;
+
+    font-size:
+        clamp(55px, 8vw, 110px);
+
+    line-height: .9;
+
+    letter-spacing: -6px;
+
+    font-weight: 900;
+
+    animation:
+        heroTitle .9s ease both;
+}
+
+.release-hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #ff5577,
+            #8d42ff
+        );
+
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* paragraph */
+
+.release-hero > p {
+    margin-top: 25px;
+
+    color: #777;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    animation:
+        fadeUp 1s .2s ease both;
+}
+
+
+/* =====================================================
+   HERO ANIMATIONS
+===================================================== */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroTitle {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(35px)
+            scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   EQUALIZER
+===================================================== */
+
+.equalizer {
+    height: 40px;
+
+    margin-top: 35px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    opacity: .7;
+}
+
+.equalizer i {
+    width: 3px;
+
+    height: 10px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #ff174f,
+            #8b3cff
+        );
+
+    animation:
+        equalizerMove
+        .8s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+.equalizer i:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.equalizer i:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.equalizer i:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.equalizer i:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.equalizer i:nth-child(6) {
+    animation-delay: .2s;
+}
+
+.equalizer i:nth-child(7) {
+    animation-delay: .1s;
+}
+
+.equalizer i:nth-child(8) {
+    animation-delay: .3s;
+}
+
+.equalizer i:nth-child(9) {
+    animation-delay: .4s;
+}
+
+.equalizer i:nth-child(10) {
+    animation-delay: .2s;
+}
+
+.equalizer i:nth-child(11) {
+    animation-delay: .1s;
+}
+
+.equalizer i:nth-child(12) {
+    animation-delay: .3s;
+}
+
+@keyframes equalizerMove {
+
+    from {
+        height: 5px;
+    }
+
+    to {
+        height: 36px;
+    }
+}
+
+
+/* =====================================================
+   RELEASE SECTION
+===================================================== */
+
+.release-section {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding:
+        40px 7% 100px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =====================================================
+   RELEASE CARD
+===================================================== */
+
+.release-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 600px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.015)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.3);
+
+    transition:
+        transform .5s ease,
+        border-color .5s ease,
+        box-shadow .5s ease;
+
+    animation:
+        cardAppear
+        .9s
+        ease
+        both;
+}
+
+.release-card:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.release-card:hover {
+    transform:
+        translateY(-12px);
+
+    border-color:
+        rgba(255,23,79,.25);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.5);
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   CARD MEDIA
+===================================================== */
+
+.card-media {
+    height: 340px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+.card-media iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: none;
+
+    transition:
+        transform .7s ease;
+}
+
+.release-card:hover
+.card-media iframe {
+    transform: scale(1.03);
+}
+
+
+/* =====================================================
+   NEW BADGE
+===================================================== */
+
+.release-badge {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 8px 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    border-radius: 30px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    box-shadow:
+        0 10px 30px rgba(255,23,79,.25);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    z-index: 5;
+
+    animation:
+        badgePulse
+        2s
+        infinite;
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 10px 30px
+            rgba(255,23,79,.2);
+    }
+
+    50% {
+        box-shadow:
+            0 10px 45px
+            rgba(255,23,79,.5);
+    }
+}
+
+
+/* =====================================================
+   PLAY DECORATION
+===================================================== */
+
+.play-decoration {
+    width: 48px;
+    height: 48px;
+
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    background:
+        rgba(0,0,0,.6);
+
+    border:
+        1px solid rgba(255,255,255,.2);
+
+    backdrop-filter: blur(10px);
+
+    pointer-events: none;
+
+    animation:
+        decorationPulse
+        2s
+        infinite;
+}
+
+@keyframes decorationPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.card-content {
+    padding: 30px;
+}
+
+.card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-top span {
+    color: #ff3d68;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.card-top small {
+    color: #444;
+
+    font-size: 24px;
+
+    font-weight: 900;
+}
+
+.card-content h2 {
+    margin-top: 12px;
+
+    font-size: 35px;
+
+    letter-spacing: -1px;
+}
+
+.card-content > p {
+    margin-top: 6px;
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   MINI WAVE
+===================================================== */
+
+.mini-wave {
+    height: 32px;
+
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+}
+
+.mini-wave i {
+    width: 3px;
+
+    height: 8px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #ff174f,
+            #8135ff
+        );
+
+    animation:
+        miniWave
+        .8s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+.mini-wave i:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.mini-wave i:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.mini-wave i:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.mini-wave i:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.mini-wave i:nth-child(6) {
+    animation-delay: .2s;
+}
+
+.mini-wave i:nth-child(7) {
+    animation-delay: .1s;
+}
+
+.mini-wave i:nth-child(8) {
+    animation-delay: .3s;
+}
+
+.mini-wave i:nth-child(9) {
+    animation-delay: .4s;
+}
+
+.mini-wave i:nth-child(10) {
+    animation-delay: .2s;
+}
+
+.mini-wave i:nth-child(11) {
+    animation-delay: .1s;
+}
+
+.mini-wave i:nth-child(12) {
+    animation-delay: .3s;
+}
+
+@keyframes miniWave {
+
+    from {
+        height: 5px;
+    }
+
+    to {
+        height: 28px;
+    }
+}
+
+
+/* =====================================================
+   WATCH BUTTON
+===================================================== */
+
+.watch-btn {
+    width: max-content;
+
+    margin-top: 15px;
+
+    padding: 13px 18px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,23,79,.12);
+
+    border:
+        1px solid rgba(255,23,79,.2);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.watch-btn:hover {
+    color: #fff;
+
+    background: #ff174f;
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(255,23,79,.25);
+}
+
+
+/* =====================================================
+   UPCOMING CARD
+===================================================== */
+
+.upcoming-card {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,23,79,.08),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.012)
+        );
+}
+
+
+/* =====================================================
+   EMPTY MUSIC AREA
+===================================================== */
+
+.empty-music {
+    height: 340px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,23,79,.13),
+            transparent 55%
+        );
+}
+
+
+/* =====================================================
+   VINYL
+===================================================== */
+
+.vinyl {
+    width: 230px;
+    height: 230px;
+
+    position: relative;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #111 0,
+            #111 4px,
+            #191919 5px,
+            #111 7px
+        );
+
+    border:
+        1px solid #292929;
+
+    box-shadow:
+        0 0 60px
+        rgba(255,23,79,.12);
+
+    animation:
+        vinylRotate
+        9s
+        linear
+        infinite;
+}
+
+@keyframes vinylRotate {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.vinyl::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 45px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+}
+
+.vinyl-center {
+    width: 70px;
+    height: 70px;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(255,23,79,.25);
+}
+
+.vinyl-center i {
+    animation:
+        heartBeat
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-heart {
+    position: absolute;
+
+    color: #ff174f;
+
+    opacity: .35;
+
+    font-size: 22px;
+
+    animation:
+        heartFloat
+        4s
+        ease-in-out
+        infinite;
+}
+
+.heart-one {
+    top: 70px;
+    left: 20%;
+
+    animation-delay: .3s;
+}
+
+.heart-two {
+    top: 110px;
+    right: 20%;
+
+    font-size: 15px;
+
+    animation-delay: 1s;
+}
+
+.heart-three {
+    bottom: 60px;
+    left: 30%;
+
+    font-size: 17px;
+
+    animation-delay: 1.7s;
+}
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: .25;
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(15deg);
+
+        opacity: .65;
+    }
+}
+
+
+/* =====================================================
+   UPCOMING CONTENT
+===================================================== */
+
+.upcoming-content h2 {
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 50px;
+
+    letter-spacing: 2px;
+}
+
+.upcoming-content > p {
+    max-width: 300px;
+
+    line-height: 1.7;
+
+    color: #777;
+}
+
+
+/* =====================================================
+   COMING LINE
+===================================================== */
+
+.coming-line {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.coming-line span {
+    width: 35px;
+    height: 1px;
+
+    background:
+        rgba(255,255,255,.12);
+}
+
+.coming-line small {
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   COMING BUTTON
+===================================================== */
+
+.coming-btn {
+    margin-top: 18px;
+
+    padding: 12px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #777;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.03);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.coming-btn:hover {
+    color: #fff;
+
+    border-color:
+        rgba(255,23,79,.3);
+
+    background:
+        rgba(255,23,79,.08);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =====================================================
+   BOTTOM TEXT
+===================================================== */
+
+.release-bottom {
+    padding:
+        30px 7% 80px;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.release-bottom p {
+    color: #444;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+.release-bottom p span {
+    color: #ff174f;
+
+    margin: 0 8px;
+}
+
+.bottom-line {
+    width: 100px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff174f
+        );
+}
+
+.bottom-line:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            #8135ff,
+            transparent
+        );
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding:
+        30px 7%;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    color: #555;
+
+    font-size: 9px;
+}
+
+.footer-logo {
+    color: #fff;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.footer-logo i,
+.footer-logo span,
+footer .fa-heart {
+    color: #ff174f;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .release-section {
+        grid-template-columns: 1fr;
+
+        max-width: 700px;
+    }
+
+    .release-card {
+        min-height: auto;
+    }
+
+    .card-media,
+    .empty-music {
+        height: 380px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 760px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+        left: 5%;
+        right: 5%;
+
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 3px;
+
+        border-radius: 18px;
+
+        background:
+            rgba(10,10,15,.98);
+
+        border:
+            1px solid rgba(255,255,255,.08);
+
+        backdrop-filter: blur(20px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-15px);
+
+        transition: .3s;
+    }
+
+    .nav-links.show {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 14px 16px;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+
+    /* HAMBURGER */
+
+    .menu-btn.active span:nth-child(1) {
+        transform:
+            translateY(7px)
+            rotate(45deg);
+    }
+
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.active span:nth-child(3) {
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+    }
+
+
+    /* HERO */
+
+    .release-hero {
+        min-height: 48vh;
+
+        padding:
+            125px 5% 45px;
+    }
+
+    .release-hero h1 {
+        font-size: 55px;
+
+        letter-spacing: -3px;
+    }
+
+    .release-hero > p {
+        font-size: 12px;
+    }
+
+
+    /* CARDS */
+
+    .release-section {
+        padding:
+            25px 5% 70px;
+
+        gap: 20px;
+    }
+
+    .release-card {
+        border-radius: 22px;
+    }
+
+    .card-media,
+    .empty-music {
+        height: 250px;
+    }
+
+
+    /* YOUTUBE */
+
+    .card-media iframe {
+        height: 100%;
+    }
+
+
+    /* VINYL */
+
+    .vinyl {
+        width: 170px;
+        height: 170px;
+    }
+
+    .vinyl-center {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    /* CARD CONTENT */
+
+    .card-content {
+        padding: 24px;
+    }
+
+    .card-content h2 {
+        font-size: 29px;
+    }
+
+    .upcoming-content h2 {
+        font-size: 40px;
+    }
+
+
+    /* BOTTOM */
+
+    .release-bottom {
+        padding:
+            15px 5% 60px;
+
+        gap: 10px;
+    }
+
+    .release-bottom p {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+
+        text-align: center;
+    }
+
+    .bottom-line {
+        width: 35px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding:
+            25px 5%;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        text-align: center;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .logo-name span {
+        font-size: 16px;
+    }
+
+    .logo-name small {
+        font-size: 7px;
+    }
+
+    .release-hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-small {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .card-media,
+    .empty-music {
+        height: 220px;
+    }
+
+    .vinyl {
+        width: 150px;
+        height: 150px;
+    }
+
+    .vinyl-center {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card-content h2 {
+        font-size: 26px;
+    }
+
+    .upcoming-content h2 {
+        font-size: 35px;
+    }
+
+    .watch-btn {
+        font-size: 9px;
+
+        padding: 11px 13px;
+    }
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection {
+    color: #fff;
+
+    background: #ff174f;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07070b;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #ff174f,
+            #8135ff
+        );
+}
+</style>
+
+<body>
+
+
+    <!-- ================= BACKGROUND ================= -->
+
+    <div class="background-glow glow-one"></div>
+
+    <div class="background-glow glow-two"></div>
+
+    <div class="background-grid"></div>
+
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <a href="index.html"
+           class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-music"></i>
+
+            </div>
+
+            <div class="logo-name">
+
+                <span>VANSH</span>
+
+                <small>ANTIL</small>
+
+            </div>
+
+        </a>
+
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Home
+
+            </a>
+
+
+            <a href="new.html"
+               class="active">
+
+                <i class="fa-solid fa-fire"></i>
+
+                New Release
+
+            </a>
+
+
+            <a href="song.html">
+
+                <i class="fa-solid fa-headphones"></i>
+
+                Music
+
+            </a>
+
+
+            <a href="about.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                About
+
+            </a>
+
+        </div>
+
+
+
+        <!-- Mobile Menu -->
+
+        <button class="menu-btn"
+                id="menuBtn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <header class="release-hero">
+
+        <div class="hero-small">
+
+            <span></span>
+
+            VANSH ANTIL
+
+            <span></span>
+
+        </div>
+
+
+        <h1>
+
+            New
+            <span>Releases</span>
+
+        </h1>
+
+
+        <p>
+
+            New emotions.
+            New melodies.
+            New stories.
+
+        </p>
+
+
+        <!-- Animated Equalizer -->
+
+        <div class="equalizer">
+
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= RELEASE SECTION ================= -->
+
+    <main class="release-section">
+
+
+        <!-- ================= CARD 1 ================= -->
+
+        <article class="release-card featured-card">
+
+
+            <!-- Card Image / Video -->
+
+            <div class="card-media">
+
+                <iframe
+                    src="https://www.youtube.com/embed/RgipSS5Q_WI?rel=0"
+                    title="Vansh Antil New Song"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+
+                <!-- New Badge -->
+
+                <div class="release-badge">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    NEW
+
+                </div>
+
+
+                <!-- Play Decoration -->
+
+                <div class="play-decoration">
+
+                    <i class="fa-solid fa-music"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Card Content -->
+
+            <div class="card-content">
+
+                <div class="card-top">
+
+                    <span>
+
+                        LOVE SONG
+
+                    </span>
+
+
+                    <small>
+
+                        01
+
+                    </small>
+
+                </div>
+
+
+                <h2>
+
+                    Vansh Antil
+
+                </h2>
+
+
+                <p>
+
+                    Official New Release
+
+                </p>
+
+
+                <div class="mini-wave">
+
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+
+                </div>
+
+
+                <a
+                    href="https://www.youtube.com/watch?v=RgipSS5Q_WI"
+                    target="_blank"
+                    class="watch-btn">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                    Watch On YouTube
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ================= CARD 2 ================= -->
+
+        <article class="release-card upcoming-card">
+
+
+            <!-- Empty Music Area -->
+
+            <div class="empty-music">
+
+                <div class="vinyl">
+
+                    <div class="vinyl-center">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="floating-heart heart-one">
+                    ♥
+                </div>
+
+                <div class="floating-heart heart-two">
+                    ♥
+                </div>
+
+                <div class="floating-heart heart-three">
+                    ♥
+                </div>
+
+            </div>
+
+
+
+            <!-- Upcoming Content -->
+
+            <div class="card-content upcoming-content">
+
+                <div class="card-top">
+
+                    <span>
+
+                        UPCOMING
+
+                    </span>
+
+
+                    <small>
+
+                        02
+
+                    </small>
+
+                </div>
+
+
+                <h2>
+
+                    LOVE
+
+                </h2>
+
+
+                <p>
+
+                    Something beautiful
+                    is coming soon...
+
+                </p>
+
+
+                <div class="coming-line">
+
+                    <span></span>
+
+                    <small>
+                        STAY TUNED
+                    </small>
+
+                    <span></span>
+
+                </div>
+
+
+                <button class="coming-btn"
+                        id="comingBtn">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    Coming Soon
+
+                </button>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+
+    <!-- ================= BOTTOM TEXT ================= -->
+
+    <section class="release-bottom">
+
+        <div class="bottom-line"></div>
+
+
+        <p>
+
+            ONE ARTIST
+
+            <span>•</span>
+
+            TWO STORIES
+
+            <span>•</span>
+
+            INFINITE FEELINGS
+
+        </p>
+
+
+        <div class="bottom-line"></div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <i class="fa-solid fa-music"></i>
+
+            VANSH
+            <span>ANTIL</span>
+
+        </div>
+
+
+        <p>
+
+            © 2026 Vansh Antil.
+            All Rights Reserved.
+
+        </p>
+
+
+        <p>
+
+            Made For
+
+            <i class="fa-solid fa-heart"></i>
+
+            Music
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- JS -->
+
+    <script>
+        /* =====================================================
+   VANSH ANTIL - NEW RELEASE
+   NEW-RELEASE.JS
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =================================================
+       ELEMENTS
+    ================================================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.querySelector(".nav-links");
+
+    const comingBtn = document.getElementById("comingBtn");
+
+    const cards = document.querySelectorAll(".release-card");
+
+    const vinyl = document.querySelector(".vinyl");
+
+
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
+
+    if (menuBtn && navLinks) {
+
+        menuBtn.addEventListener("click", () => {
+
+            menuBtn.classList.toggle("active");
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+        // Close menu after clicking a link
+
+        const links =
+            navLinks.querySelectorAll("a");
+
+        links.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menuBtn.classList.remove("active");
+
+                navLinks.classList.remove("show");
+
+            });
+
+        });
+
+    }
+
+
+
+    /* =================================================
+       ACTIVE NAV
+    ================================================= */
+
+    const currentPage =
+        window.location.pathname
+        .split("/")
+        .pop();
+
+    const navItems =
+        document.querySelectorAll(".nav-links a");
+
+    navItems.forEach(link => {
+
+        const href =
+            link.getAttribute("href");
+
+        if (
+            href === currentPage ||
+            (
+                currentPage === "" &&
+                href === "index.html"
+            )
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+
+
+    /* =================================================
+       SCROLL REVEAL
+    ================================================= */
+
+    const revealItems =
+        document.querySelectorAll(
+            ".release-card, .release-bottom"
+        );
+
+
+    revealItems.forEach(item => {
+
+        item.style.opacity = "0";
+
+        item.style.transform =
+            "translateY(45px)";
+
+        item.style.transition =
+            "opacity .8s ease, transform .8s ease";
+
+    });
+
+
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.style.opacity =
+                            "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    revealItems.forEach(item => {
+
+        revealObserver.observe(item);
+
+    });
+
+
+
+    /* =================================================
+       CARD 3D TILT
+    ================================================= */
+
+    cards.forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            (event) => {
+
+                if (
+                    window.innerWidth <= 760
+                ) {
+                    return;
+                }
+
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const centerX =
+                    rect.width / 2;
+
+
+                const centerY =
+                    rect.height / 2;
+
+
+                const rotateX =
+                    (y - centerY) /
+                    35;
+
+
+                const rotateY =
+                    (centerX - x) /
+                    35;
+
+
+                card.style.transform =
+                    `perspective(1000px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-8px)`;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform =
+                    "";
+
+            }
+        );
+
+    });
+
+
+
+    /* =================================================
+       LOVE / UPCOMING BUTTON
+    ================================================= */
+
+    if (comingBtn) {
+
+        comingBtn.addEventListener(
+            "click",
+            () => {
+
+                createHearts();
+
+                comingBtn.innerHTML =
+                    `
+                    <i class="fa-solid fa-heart"></i>
+                    LOVE IS COMING...
+                    `;
+
+
+                comingBtn.style.color =
+                    "#ff174f";
+
+
+                comingBtn.style.borderColor =
+                    "rgba(255,23,79,.4)";
+
+
+                setTimeout(() => {
+
+                    comingBtn.innerHTML =
+                        `
+                        <i class="fa-solid fa-heart"></i>
+                        Coming Soon
+                        `;
+
+                    comingBtn.style.color =
+                        "";
+
+                    comingBtn.style.borderColor =
+                        "";
+
+                }, 2200);
+
+            }
+        );
+
+    }
+
+
+
+    /* =================================================
+       FLOATING HEARTS
+    ================================================= */
+
+    function createHearts() {
+
+        for (let i = 0; i < 12; i++) {
+
+            const heart =
+                document.createElement("span");
+
+            heart.innerHTML =
+                "♥";
+
+            heart.style.position =
+                "fixed";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.bottom =
+                "30px";
+
+            heart.style.fontSize =
+                (12 + Math.random() * 18) + "px";
+
+            heart.style.color =
+                "#ff174f";
+
+            heart.style.pointerEvents =
+                "none";
+
+            heart.style.zIndex =
+                "9999";
+
+            heart.style.transition =
+                "transform 2s ease, opacity 2s ease";
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(() => {
+
+                heart.style.transform =
+                    `translate(
+                        ${(Math.random() - .5) * 150}px,
+                        -${150 + Math.random() * 300}px
+                    )
+                    rotate(${Math.random() * 90 - 45}deg)`;
+
+                heart.style.opacity =
+                    "0";
+
+            }, 50);
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 2100);
+
+        }
+
+    }
+
+
+
+    /* =================================================
+       VINYL INTERACTION
+    ================================================= */
+
+    if (vinyl) {
+
+        vinyl.addEventListener(
+            "mouseenter",
+            () => {
+
+                vinyl.style.animationPlayState =
+                    "paused";
+
+            }
+        );
+
+
+        vinyl.addEventListener(
+            "mouseleave",
+            () => {
+
+                vinyl.style.animationPlayState =
+                    "running";
+
+            }
+        );
+
+    }
+
+
+
+    /* =================================================
+       YOUTUBE IFRAME
+    ================================================= */
+
+    const iframe =
+        document.querySelector(
+            ".card-media iframe"
+        );
+
+
+    if (iframe) {
+
+        iframe.addEventListener(
+            "load",
+            () => {
+
+                console.log(
+                    "🎵 Vansh Antil song loaded."
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =================================================
+       WATCH BUTTON RIPPLE
+    ================================================= */
+
+    const watchBtn =
+        document.querySelector(".watch-btn");
+
+
+    if (watchBtn) {
+
+        watchBtn.addEventListener(
+            "click",
+            function(event) {
+
+                const ripple =
+                    document.createElement("span");
+
+
+                ripple.style.position =
+                    "absolute";
+
+                ripple.style.width =
+                    "20px";
+
+                ripple.style.height =
+                    "20px";
+
+                ripple.style.borderRadius =
+                    "50%";
+
+                ripple.style.background =
+                    "rgba(255,255,255,.35)";
+
+                ripple.style.left =
+                    event.offsetX + "px";
+
+                ripple.style.top =
+                    event.offsetY + "px";
+
+                ripple.style.transform =
+                    "translate(-50%,-50%)";
+
+                ripple.style.pointerEvents =
+                    "none";
+
+                ripple.style.animation =
+                    "rippleAnimation .6s ease";
+
+
+                this.style.position =
+                    "relative";
+
+                this.style.overflow =
+                    "hidden";
+
+
+                this.appendChild(
+                    ripple
+                );
+
+
+                setTimeout(() => {
+
+                    ripple.remove();
+
+                }, 600);
+
+            }
+        );
+
+    }
+
+
+
+    /* =================================================
+       BACKGROUND PARALLAX
+    ================================================= */
+
+    const glowOne =
+        document.querySelector(".glow-one");
+
+    const glowTwo =
+        document.querySelector(".glow-two");
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            const scroll =
+                window.scrollY;
+
+
+            if (glowOne) {
+
+                glowOne.style.transform =
+                    `translateY(${scroll * .08}px)`;
+
+            }
+
+
+            if (glowTwo) {
+
+                glowTwo.style.transform =
+                    `translateY(${-scroll * .05}px)`;
+
+            }
+
+        }
+    );
+
+
+
+    /* =================================================
+       KEYBOARD SHORTCUT
+       N = NEW RELEASE
+    ================================================= */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key.toLowerCase() === "n" &&
+                event.target.tagName !== "INPUT" &&
+                event.target.tagName !== "TEXTAREA"
+            ) {
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+
+        }
+    );
+
+
+
+    /* =================================================
+       PAGE LOADED
+    ================================================= */
+
+    document.body.classList.add(
+        "loaded"
+    );
+
+
+    console.log(
+        "%c VANSH ANTIL ",
+        "background:#ff174f;color:white;padding:8px;font-weight:900;"
+    );
+
+    console.log(
+        "%c New Release Page 🎵 ",
+        "color:#ff174f;font-weight:bold;"
+    );
+
+});
+    </script>
+
+</body>
+
+</html>

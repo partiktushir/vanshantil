@@ -1,0 +1,2937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vansh Antil | Official Music</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* ==================================================
+   VANSH ANTIL - OFFICIAL MUSIC WEBSITE
+   STYLE.CSS
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #07070b;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ==================================================
+   BACKGROUND
+================================================== */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 60px 60px;
+}
+
+.bg-glow {
+    position: fixed;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: .18;
+    z-index: -5;
+    pointer-events: none;
+}
+
+.glow-one {
+    top: -200px;
+    left: -180px;
+    background: #ff174f;
+}
+
+.glow-two {
+    right: -200px;
+    bottom: -200px;
+    background: #7c3cff;
+}
+
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(7,7,11,.78);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #7c3cff
+        );
+
+    box-shadow:
+        0 0 30px rgba(255,23,79,.35);
+}
+
+.logo-icon i {
+    font-size: 18px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-text span {
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo-text small {
+    margin-top: 5px;
+
+    color: #ff3d68;
+
+    font-size: 8px;
+    letter-spacing: 5px;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    padding: 11px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 30px;
+
+    color: #999;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    background: rgba(255,255,255,.07);
+}
+
+.nav-links a.active {
+    color: #ff3d68;
+    background: rgba(255,255,255,.05);
+}
+
+.nav-links i {
+    font-size: 11px;
+}
+
+
+/* ==================================================
+   MOBILE MENU
+================================================== */
+
+.menu-btn {
+    width: 45px;
+    height: 45px;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.05);
+
+    cursor: pointer;
+}
+
+.menu-btn span {
+    width: 21px;
+    height: 2px;
+
+    border-radius: 5px;
+
+    background: #fff;
+
+    transition: .3s;
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 145px 8% 70px;
+
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+/* ARTIST TAG */
+
+.artist-tag {
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #999;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.artist-tag span {
+    width: 35px;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #7c3cff
+        );
+}
+
+
+/* HERO TITLE */
+
+.hero h1 {
+    font-size: clamp(48px,6vw,86px);
+
+    line-height: .98;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #ff5578,
+            #9b5cff
+        );
+
+   
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* DESCRIPTION */
+
+.hero-content > p {
+    max-width: 590px;
+
+    margin-top: 28px;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.hero-content strong {
+    color: #fff;
+}
+
+
+/* ==================================================
+   HERO BUTTONS
+================================================== */
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+    gap: 14px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.primary-btn {
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8c35ff
+        );
+
+    box-shadow:
+        0 12px 35px rgba(255,23,79,.2);
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 45px rgba(255,23,79,.35);
+}
+
+.secondary-btn {
+    color: #ddd;
+
+    background: rgba(255,255,255,.04);
+
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.secondary-btn:hover {
+    color: #fff;
+
+    transform: translateY(-4px);
+
+    border-color: rgba(255,255,255,.3);
+}
+
+
+/* ==================================================
+   MUSIC STATS
+================================================== */
+
+.music-stats {
+    margin-top: 55px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.stat h3 {
+    font-size: 19px;
+}
+
+.stat p {
+    margin-top: 5px;
+
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.stat-line {
+    width: 1px;
+    height: 32px;
+
+    background: rgba(255,255,255,.12);
+}
+
+
+/* ==================================================
+   HERO VISUAL
+================================================== */
+
+.hero-visual {
+    height: 620px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ROTATING CIRCLE */
+
+.big-circle {
+    width: 470px;
+    height: 470px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 80px rgba(255,23,79,.1),
+        inset 0 0 80px rgba(124,60,255,.08);
+
+    animation:
+        rotateCircle 25s linear infinite;
+}
+
+.big-circle::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 30px;
+
+    border-radius: 50%;
+
+    border: 1px dashed rgba(255,255,255,.08);
+}
+
+@keyframes rotateCircle {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==================================================
+   ARTIST IMAGE
+================================================== */
+
+.artist-image {
+    width: 390px;
+    height: 500px;
+
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 25px 35px rgba(0,0,0,.8)
+        )
+        drop-shadow(
+            0 0 35px rgba(255,23,79,.12)
+        );
+
+    animation:
+        artistFloat 5s ease-in-out infinite;
+}
+
+@keyframes artistFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.image-shadow {
+    width: 300px;
+    height: 60px;
+
+    position: absolute;
+
+    bottom: 0;
+
+    border-radius: 50%;
+
+    background: #ff174f;
+
+    filter: blur(50px);
+
+    opacity: .18;
+}
+
+
+/* ==================================================
+   FLOATING SONG CARD
+================================================== */
+
+.floating-song-card {
+    min-width: 220px;
+
+    padding: 12px;
+
+    position: absolute;
+
+    right: 0;
+    bottom: 100px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-radius: 16px;
+
+    background: rgba(20,20,27,.85);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+
+    animation:
+        cardFloat 4s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.song-cover {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #7c3cff
+        );
+}
+
+.floating-song-info {
+    flex: 1;
+}
+
+.floating-song-info h4 {
+    font-size: 12px;
+}
+
+.floating-song-info p {
+    margin-top: 4px;
+
+    color: #666;
+
+    font-size: 9px;
+}
+
+.mini-play {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff;
+    color: #111;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.mini-play:hover {
+    transform: scale(1.1);
+}
+
+
+/* ==================================================
+   FLOATING NOTES
+================================================== */
+
+.music-note {
+    position: absolute;
+
+    z-index: 5;
+
+    color: #ff174f;
+
+    font-size: 22px;
+
+    animation:
+        noteFloat 4s ease-in-out infinite;
+}
+
+.note-one {
+    top: 100px;
+    left: 60px;
+}
+
+.note-two {
+    top: 200px;
+    right: 50px;
+
+    color: #8c35ff;
+
+    animation-delay: 1s;
+}
+
+.note-three {
+    bottom: 130px;
+    left: 90px;
+
+    animation-delay: 2s;
+}
+
+@keyframes noteFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(12deg);
+    }
+}
+
+
+/* ==================================================
+   SOUND WAVE
+================================================== */
+
+.sound-section {
+    padding: 35px 8%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    border-top:
+        1px solid rgba(255,255,255,.05);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.05);
+}
+
+.sound-section p {
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+.sound-wave {
+    height: 35px;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+}
+
+.sound-wave span {
+    width: 3px;
+    height: 8px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            #ff174f,
+            #8c35ff
+        );
+
+    animation:
+        wave 1s ease-in-out infinite alternate;
+}
+
+.sound-wave span:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.sound-wave span:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.sound-wave span:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.sound-wave span:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.sound-wave span:nth-child(6) {
+    animation-delay: .5s;
+}
+
+.sound-wave span:nth-child(7) {
+    animation-delay: .2s;
+}
+
+.sound-wave span:nth-child(8) {
+    animation-delay: .1s;
+}
+
+.sound-wave span:nth-child(9) {
+    animation-delay: .4s;
+}
+
+.sound-wave span:nth-child(10) {
+    animation-delay: .3s;
+}
+
+@keyframes wave {
+
+    from {
+        height: 5px;
+    }
+
+    to {
+        height: 32px;
+    }
+}
+
+
+/* ==================================================
+   COMMON SECTION
+================================================== */
+
+.new-song-section,
+.music-section,
+.about-section {
+    padding: 110px 8%;
+}
+
+.section-heading {
+    margin-bottom: 45px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.small-title {
+    margin-bottom: 10px;
+
+    color: #ff3d68;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.small-title i {
+    margin-right: 5px;
+}
+
+.section-heading h2,
+.about-content h2 {
+    font-size: clamp(35px,4vw,55px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+.section-heading h2 span,
+.about-content h2 span {
+    color: #ff3d68;
+}
+
+
+/* ==================================================
+   FEATURED SONG
+================================================== */
+
+.featured-song {
+    min-height: 430px;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+}
+
+
+/* ==================================================
+   YOUTUBE
+================================================== */
+
+.youtube-box {
+    width: 100%;
+    height: 100%;
+
+    min-height: 430px;
+
+    background: #000;
+}
+
+.youtube-box iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: none;
+}
+
+
+/* ==================================================
+   SONG INFORMATION
+================================================== */
+
+.featured-info {
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.new-badge {
+    width: max-content;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    color: #ff3d68;
+
+    background: rgba(255,23,79,.1);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.featured-info h2 {
+    margin-top: 20px;
+
+    font-size: clamp(30px,4vw,50px);
+
+    letter-spacing: -2px;
+}
+
+.artist-name {
+    margin-top: 10px;
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+.artist-name i {
+    color: #ff3d68;
+}
+
+.song-description {
+    max-width: 500px;
+
+    margin-top: 20px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   SONG DETAILS
+================================================== */
+
+.song-details {
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 25px;
+}
+
+.song-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.song-details span {
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.song-details strong {
+    color: #ddd;
+
+    font-size: 10px;
+}
+
+
+/* ==================================================
+   YOUTUBE BUTTON
+================================================== */
+
+.youtube-btn {
+    width: max-content;
+
+    margin-top: 30px;
+
+    padding: 13px 18px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border-radius: 10px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    background: #ff174f;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.youtube-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(255,23,79,.3);
+}
+
+
+/* ==================================================
+   MUSIC SECTION
+================================================== */
+
+.music-section {
+    padding-top: 50px;
+}
+
+
+/* SINGLE SONG CARD */
+
+.single-song-card {
+    max-width: 800px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,23,79,.08),
+            rgba(124,60,255,.05)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    transition: .3s;
+}
+
+.single-song-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(255,23,79,.3);
+}
+
+
+/* SONG ICON */
+
+.song-icon {
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #7c3cff
+        );
+
+    font-size: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(255,23,79,.2);
+}
+
+
+/* SONG INFO */
+
+.song-info {
+    flex: 1;
+}
+
+.song-info span {
+    color: #ff3d68;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.song-info h3 {
+    margin-top: 6px;
+
+    font-size: 17px;
+}
+
+.song-info p {
+    margin-top: 5px;
+
+    color: #666;
+
+    font-size: 10px;
+}
+
+
+/* SONG PLAY */
+
+.song-play {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #111;
+
+    background: #fff;
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+.song-play:hover {
+    transform: scale(1.1);
+
+    background: #ff174f;
+    color: #fff;
+}
+
+
+/* ==================================================
+   ABOUT
+================================================== */
+
+.about-section {
+    min-height: 500px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(124,60,255,.13),
+            transparent 35%
+        );
+}
+
+.about-number {
+    position: absolute;
+
+    right: 5%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 350px;
+
+    font-weight: 700;
+
+    color: rgba(255,255,255,.025);
+
+    pointer-events: none;
+}
+
+.about-content {
+    max-width: 650px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.about-content h3 {
+    margin-top: 25px;
+
+    font-size: 25px;
+}
+
+.about-content > p:not(.small-title) {
+    max-width: 550px;
+
+    margin: 15px 0 30px;
+
+    color: #888;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   SOCIAL
+================================================== */
+
+.social-links {
+    position: absolute;
+
+    right: 8%;
+    bottom: 70px;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.social-links a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,.05);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    transition: .3s;
+}
+
+.social-links a:hover {
+    color: #fff;
+
+    background: #ff174f;
+
+    transform: translateY(-5px);
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    padding: 30px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    color: #555;
+
+    font-size: 9px;
+}
+
+.footer-logo {
+    color: #fff;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.footer-logo i {
+    color: #ff174f;
+}
+
+.footer-logo span {
+    color: #ff174f;
+}
+
+.footer-tagline i {
+    color: #ff174f;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width:1000px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 130px;
+
+        text-align: center;
+    }
+
+    .artist-tag {
+        justify-content: center;
+    }
+
+    .hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .music-stats {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        height: 560px;
+    }
+
+    .featured-song {
+        grid-template-columns: 1fr;
+    }
+
+    .youtube-box {
+        min-height: 450px;
+    }
+
+    .featured-info {
+        padding: 40px;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width:760px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+        left: 5%;
+        right: 5%;
+
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 18px;
+
+        background:
+            rgba(12,12,18,.97);
+
+        border:
+            1px solid rgba(255,255,255,.08);
+
+        backdrop-filter: blur(20px);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-20px);
+
+        transition: .3s;
+    }
+
+    .nav-links.show {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+    .nav-links a {
+        padding: 14px 16px;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+
+    /* HAMBURGER */
+
+    .menu-btn.active span:nth-child(1) {
+        transform:
+            translateY(7px)
+            rotate(45deg);
+    }
+
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-btn.active span:nth-child(3) {
+        transform:
+            translateY(-7px)
+            rotate(-45deg);
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding:
+            115px 5% 50px;
+
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-content > p {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 220px;
+    }
+
+    .music-stats {
+        margin-top: 40px;
+
+        gap: 12px;
+    }
+
+    .stat h3 {
+        font-size: 15px;
+    }
+
+    .stat p {
+        font-size: 7px;
+    }
+
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+        height: 480px;
+    }
+
+    .big-circle {
+        width: 340px;
+        height: 340px;
+    }
+
+    .artist-image {
+        width: 300px;
+        height: 420px;
+    }
+
+    .floating-song-card {
+        right: 0;
+
+        bottom: 40px;
+
+        min-width: 195px;
+    }
+
+
+    /* SOUND */
+
+    .sound-section {
+        padding: 25px 5%;
+    }
+
+    .sound-section p {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* SECTIONS */
+
+    .new-song-section,
+    .music-section,
+    .about-section {
+        padding: 80px 5%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .section-heading h2 {
+        font-size: 35px;
+    }
+
+
+    /* YOUTUBE */
+
+    .youtube-box {
+        min-height: 240px;
+
+        aspect-ratio: 16 / 9;
+    }
+
+    .youtube-box iframe {
+        height: 100%;
+    }
+
+
+    /* FEATURED */
+
+    .featured-info {
+        padding: 30px 22px;
+    }
+
+    .featured-info h2 {
+        font-size: 30px;
+    }
+
+    .song-description {
+        font-size: 12px;
+    }
+
+
+    /* SONG DETAILS */
+
+    .song-details {
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+
+    /* MUSIC */
+
+    .single-song-card {
+        padding: 15px;
+    }
+
+    .song-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    /* ABOUT */
+
+    .about-section {
+        min-height: 550px;
+    }
+
+    .about-number {
+        font-size: 230px;
+
+        right: -20px;
+    }
+
+    .social-links {
+        left: 5%;
+        right: auto;
+
+        bottom: 40px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 25px 5%;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        text-align: center;
+    }
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width:420px) {
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo-text span {
+        font-size: 16px;
+    }
+
+    .logo-text small {
+        font-size: 7px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-visual {
+        height: 430px;
+    }
+
+    .big-circle {
+        width: 290px;
+        height: 290px;
+    }
+
+    .artist-image {
+        width: 260px;
+        height: 380px;
+    }
+
+    .floating-song-card {
+        right: -10px;
+
+        transform: scale(.85);
+    }
+
+    .music-stats {
+        gap: 8px;
+    }
+
+    .stat-line {
+        height: 25px;
+    }
+
+    .featured-info h2 {
+        font-size: 26px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .youtube-box {
+        min-height: 210px;
+    }
+
+    .single-song-card {
+        gap: 12px;
+    }
+
+    .song-info h3 {
+        font-size: 14px;
+    }
+}
+</style>
+<body>
+
+    <!-- Background Glow -->
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+            <div class="logo-text">
+                <span>VANSH</span>
+                <small>ANTIL</small>
+            </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html" class="active">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="new.html">
+                <i class="fa-solid fa-fire"></i>
+                New Release
+            </a>
+
+            <a href="song.html">
+                <i class="fa-solid fa-headphones"></i>
+                Music
+            </a>
+
+            <a href="about.html">
+                <i class="fa-solid fa-user"></i>
+                About
+            </a>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+
+        <button class="menu-btn" id="menuBtn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- ================= HOME ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="artist-tag">
+
+                <span></span>
+
+                OFFICIAL MUSIC WEBSITE
+
+            </div>
+
+
+            <h1>
+
+                Love Has
+                <span>A Sound.</span>
+
+                <br>
+
+                Feel It With
+                <span>Vansh.</span>
+
+            </h1>
+
+
+            <p>
+
+                Welcome to the official music space of
+                <strong>Vansh Antil</strong>.
+
+                One artist.
+                One new release.
+                One love story told through music.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="new.html" class="primary-btn">
+
+                    <i class="fa-solid fa-play"></i>
+
+                    Listen Now
+
+                </a>
+
+
+                <a href="song.html" class="secondary-btn">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                    Watch Song
+
+                </a>
+
+            </div>
+
+
+            <!-- Small Stats -->
+
+            <div class="music-stats">
+
+                <div class="stat">
+
+                    <h3>01</h3>
+
+                    <p>
+                        RELEASE
+                    </p>
+
+                </div>
+
+
+                <div class="stat-line"></div>
+
+
+                <div class="stat">
+
+                    <h3>way to hell</h3>
+
+                    <p>
+                        GENRE
+                    </p>
+
+                </div>
+
+
+                <div class="stat-line"></div>
+
+
+                <div class="stat">
+
+                    <h3>2026</h3>
+
+                    <p>
+                        NEW MUSIC
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= HERO VISUAL ================= -->
+
+        <div class="hero-visual">
+
+            <div class="big-circle"></div>
+
+
+            <!-- Artist Image -->
+
+            <div class="artist-image">
+
+                <!--
+                    APNI VANSHA ANTIL IMAGE YAHAN RAKHNA
+
+                    images/vansh.png
+                -->
+
+                <img src="images/vansh.png"
+                     alt="Vansh Antil">
+
+                <div class="image-shadow"></div>
+
+            </div>
+
+
+            <!-- Floating Music Card -->
+
+            <div class="floating-song-card">
+
+                <div class="song-cover">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </div>
+
+
+                <div class="floating-song-info">
+
+                    <h4>Vansh Antil</h4>
+
+                    <p>
+                        New Love Song
+                    </p>
+
+                </div>
+
+
+                <a href="#music" class="mini-play">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- Floating Notes -->
+
+            <div class="music-note note-one">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+            <div class="music-note note-two">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <div class="music-note note-three">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MUSIC WAVE ================= -->
+
+    <section class="sound-section">
+
+        <p>
+            FEEL THE VIBE
+        </p>
+
+
+        <div class="sound-wave">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= NEW RELEASE ================= -->
+
+    <section class="new-song-section" id="new-release">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="small-title">
+
+                    <i class="fa-solid fa-fire"></i>
+
+                    LATEST RELEASE
+
+                </p>
+
+
+                <h2>
+
+                    way to
+                    <span> hell</span>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="featured-song">
+
+
+            <!-- YouTube Video -->
+
+            <div class="youtube-box">
+
+                <iframe
+                    src="https://www.youtube.com/embed/RgipSS5Q_WI?autoplay=0&loop=1&playlist=RgipSS5Q_WI&rel=0"
+                    title="Vansh Antil New Song"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+
+
+            <!-- Song Information -->
+
+            <div class="featured-info">
+
+                <span class="new-badge">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    NEW RELEASE
+
+                </span>
+
+
+                <h2>
+                    Vansh Antil
+                </h2>
+
+
+                <p class="artist-name">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    Vansh Antil
+
+                </p>
+
+
+                <p class="song-description">
+
+                    A new love song by Vansh Antil.
+
+                    Turn up the volume,
+                    watch the video and feel the story
+                    behind the music.
+
+                </p>
+
+
+                <div class="song-details">
+
+                    <div>
+
+                        <span>
+                            ARTIST
+                        </span>
+
+                        <strong>
+                            Vansh Antil
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            TYPE
+                        </span>
+
+                        <strong>
+                            Love Song
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong>
+                            New Release
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://www.youtube.com/watch?v=RgipSS5Q_WI"
+                    target="_blank"
+                    class="youtube-btn">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                    Watch On YouTube
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MUSIC ================= -->
+
+    <section class="music-section" id="music">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="small-title">
+
+                    <i class="fa-solid fa-compact-disc"></i>
+
+                    VANSH ANTIL
+
+                </p>
+
+
+                <h2>
+
+                    His
+                    <span>Music</span>
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ONLY ONE SONG -->
+
+        <div class="single-song-card">
+
+
+            <div class="song-icon">
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+
+            <div class="song-info">
+
+                <span>
+                    NEW RELEASE
+                </span>
+
+                <h3>
+                    Vansh Antil
+                </h3>
+
+                <p>
+                    Love Song • Official Video
+                </p>
+
+            </div>
+
+
+            <a
+                href="#new-release"
+                class="song-play">
+
+                <i class="fa-solid fa-play"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-number">
+            V
+        </div>
+
+
+        <div class="about-content">
+
+            <p class="small-title">
+
+                <i class="fa-solid fa-user"></i>
+
+                THE ARTIST
+
+            </p>
+
+
+            <h2>
+
+                Meet
+                <span>Vansh Antil</span>
+
+            </h2>
+
+
+            <h3>
+                Singer & Artist
+            </h3>
+
+
+            <p>
+
+                Vansh Antil brings emotions,
+                melodies and stories together through music.
+
+                This is just the beginning of his musical journey.
+
+            </p>
+
+
+            <a href="#new-release" class="primary-btn">
+
+                <i class="fa-solid fa-music"></i>
+
+                Listen To His Song
+
+            </a>
+
+        </div>
+
+
+        <!-- Social -->
+
+        <div class="social-links">
+
+            <a href="#" aria-label="Instagram">
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </a>
+
+
+            <a
+                href="https://www.youtube.com/watch?v=RgipSS5Q_WI"
+                target="_blank"
+                aria-label="YouTube">
+
+                <i class="fa-brands fa-youtube"></i>
+
+            </a>
+
+
+            <a href="#" aria-label="Spotify">
+
+                <i class="fa-brands fa-spotify"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <i class="fa-solid fa-music"></i>
+
+            VANSH
+            <span>ANTIL</span>
+
+        </div>
+
+
+        <p>
+            © 2026 Vansh Antil. All Rights Reserved.
+        </p>
+
+
+        <p class="footer-tagline">
+
+            Made For
+            <i class="fa-solid fa-heart"></i>
+            Music
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= SCRIPT ================= -->
+
+    <script>
+        /* ==================================================
+   VANSH ANTIL - OFFICIAL MUSIC WEBSITE
+   SCRIPT.JS
+================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ==================================================
+       ELEMENTS
+    ================================================== */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    const sections = document.querySelectorAll("section[id]");
+
+    const heroVisual = document.querySelector(".hero-visual");
+    const artistImage = document.querySelector(".artist-image");
+
+    const soundBars = document.querySelectorAll(".sound-wave span");
+
+
+    /* ==================================================
+       MOBILE MENU
+    ================================================== */
+
+    if (menuBtn && navLinks) {
+
+        menuBtn.addEventListener("click", () => {
+
+            menuBtn.classList.toggle("active");
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+        /* Close menu after clicking link */
+
+        navItems.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menuBtn.classList.remove("active");
+
+                navLinks.classList.remove("show");
+
+            });
+
+        });
+
+    }
+
+
+    /* ==================================================
+       SMOOTH SCROLL
+    ================================================== */
+
+    navItems.forEach(link => {
+
+        link.addEventListener("click", function (e) {
+
+            const targetId = this.getAttribute("href");
+
+            if (
+                targetId &&
+                targetId.startsWith("#")
+            ) {
+
+                const target =
+                    document.querySelector(targetId);
+
+                if (target) {
+
+                    e.preventDefault();
+
+                    const navbarHeight = 80;
+
+                    const targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        navbarHeight;
+
+                    window.scrollTo({
+
+                        top: targetPosition,
+
+                        behavior: "smooth"
+
+                    });
+
+                }
+
+            }
+
+        });
+
+    });
+
+
+    /* ==================================================
+       ACTIVE NAVBAR
+    ================================================== */
+
+    function updateActiveNav() {
+
+        let currentSection = "";
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+            const sectionHeight =
+                section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY <
+                sectionTop + sectionHeight
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navItems.forEach(link => {
+
+            link.classList.remove("active");
+
+            const linkTarget =
+                link.getAttribute("href");
+
+            if (
+                linkTarget ===
+                "#" + currentSection
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNav
+    );
+
+    updateActiveNav();
+
+
+    /* ==================================================
+       SCROLL REVEAL
+    ================================================== */
+
+    const revealElements = document.querySelectorAll(
+        ".section-heading, .featured-song, .single-song-card, .about-content"
+    );
+
+
+    revealElements.forEach(element => {
+
+        element.style.opacity = "0";
+
+        element.style.transform =
+            "translateY(35px)";
+
+        element.style.transition =
+            "opacity .8s ease, transform .8s ease";
+
+    });
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* ==================================================
+       HERO MOUSE MOVEMENT
+    ================================================== */
+
+    if (
+        heroVisual &&
+        artistImage &&
+        window.innerWidth > 760
+    ) {
+
+        heroVisual.addEventListener(
+            "mousemove",
+            (e) => {
+
+                const rect =
+                    heroVisual.getBoundingClientRect();
+
+                const x =
+                    e.clientX - rect.left;
+
+                const y =
+                    e.clientY - rect.top;
+
+                const centerX =
+                    rect.width / 2;
+
+                const centerY =
+                    rect.height / 2;
+
+                const moveX =
+                    (x - centerX) / 35;
+
+                const moveY =
+                    (y - centerY) / 35;
+
+
+                artistImage.style.transform =
+                    `translate(${moveX}px, ${moveY}px)`;
+
+            }
+        );
+
+
+        heroVisual.addEventListener(
+            "mouseleave",
+            () => {
+
+                artistImage.style.transform =
+                    "translate(0,0)";
+
+            }
+        );
+
+    }
+
+
+    /* ==================================================
+       MUSIC WAVE RANDOM ANIMATION
+    ================================================== */
+
+    function animateWave() {
+
+        soundBars.forEach((bar, index) => {
+
+            const randomHeight =
+                Math.floor(
+                    Math.random() * 28
+                ) + 5;
+
+            bar.style.height =
+                randomHeight + "px";
+
+            bar.style.animationDelay =
+                (index * 0.04) + "s";
+
+        });
+
+    }
+
+
+    setInterval(
+        animateWave,
+        700
+    );
+
+
+    /* ==================================================
+       PLAY BUTTONS
+    ================================================== */
+
+    const playButtons =
+        document.querySelectorAll(
+            ".song-play, .mini-play"
+        );
+
+
+    playButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            (e) => {
+
+                const target =
+                    document.querySelector(
+                        "#new-release"
+                    );
+
+                if (target) {
+
+                    e.preventDefault();
+
+                    const navbarHeight = 80;
+
+                    const position =
+                        target.offsetTop -
+                        navbarHeight;
+
+                    window.scrollTo({
+
+                        top: position,
+
+                        behavior: "smooth"
+
+                    });
+
+                }
+
+            }
+        );
+
+    });
+
+
+    /* ==================================================
+       YOUTUBE VIDEO
+    ================================================== */
+
+    const youtubeFrame =
+        document.querySelector(
+            ".youtube-box iframe"
+        );
+
+
+    if (youtubeFrame) {
+
+        youtubeFrame.addEventListener(
+            "load",
+            () => {
+
+                console.log(
+                    "Vansh Antil YouTube player loaded."
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ==================================================
+       YOUTUBE WATCH BUTTON
+    ================================================== */
+
+    const youtubeButton =
+        document.querySelector(
+            ".youtube-btn"
+        );
+
+
+    if (youtubeButton) {
+
+        youtubeButton.addEventListener(
+            "click",
+            () => {
+
+                console.log(
+                    "Opening Vansh Antil song on YouTube..."
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ==================================================
+       PARALLAX BACKGROUND
+    ================================================== */
+
+    const glowOne =
+        document.querySelector(
+            ".glow-one"
+        );
+
+    const glowTwo =
+        document.querySelector(
+            ".glow-two"
+        );
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            const scrollY =
+                window.scrollY;
+
+
+            if (glowOne) {
+
+                glowOne.style.transform =
+                    `translateY(${scrollY * 0.12}px)`;
+
+            }
+
+
+            if (glowTwo) {
+
+                glowTwo.style.transform =
+                    `translateY(${-scrollY * 0.08}px)`;
+
+            }
+
+        }
+    );
+
+
+    /* ==================================================
+       BUTTON RIPPLE EFFECT
+    ================================================== */
+
+    const buttons =
+        document.querySelectorAll(
+            ".primary-btn, .secondary-btn, .youtube-btn"
+        );
+
+
+    buttons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function (e) {
+
+                const ripple =
+                    document.createElement(
+                        "span"
+                    );
+
+                ripple.classList.add(
+                    "button-ripple"
+                );
+
+
+                const rect =
+                    this.getBoundingClientRect();
+
+
+                const size =
+                    Math.max(
+                        rect.width,
+                        rect.height
+                    );
+
+
+                ripple.style.width =
+                    size + "px";
+
+                ripple.style.height =
+                    size + "px";
+
+                ripple.style.left =
+                    e.clientX -
+                    rect.left -
+                    size / 2 +
+                    "px";
+
+                ripple.style.top =
+                    e.clientY -
+                    rect.top -
+                    size / 2 +
+                    "px";
+
+
+                this.appendChild(ripple);
+
+
+                setTimeout(() => {
+
+                    ripple.remove();
+
+                }, 600);
+
+            }
+        );
+
+    });
+
+
+    /* ==================================================
+       PAGE LOADED
+    ================================================== */
+
+    document.body.classList.add(
+        "page-loaded"
+    );
+
+
+    /* ==================================================
+       CONSOLE
+    ================================================== */
+
+    console.log(
+        "%c VANSH ANTIL ",
+        "background:#ff174f;color:white;padding:8px;font-weight:bold;"
+    );
+
+    console.log(
+        "%c Official Music Website Loaded 🎵 ",
+        "color:#ff174f;font-weight:bold;"
+    );
+
+});
+    </script>
+
+</body>
+
+</html>

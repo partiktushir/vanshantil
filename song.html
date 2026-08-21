@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music | Vansh Antil</title>
+
+    <link rel="stylesheet" href="music.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<style>
+    /* =====================================================
+   VANSH ANTIL - MUSIC PAGE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Montserrat", sans-serif;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 23, 79, .12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(120, 50, 255, .12),
+            transparent 35%
+        ),
+        #07070b;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.bg-glow {
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    opacity: .18;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.glow-one {
+    top: -220px;
+    left: -180px;
+
+    background: #ff174f;
+
+    animation: glowOne 8s ease-in-out infinite alternate;
+}
+
+.glow-two {
+    right: -200px;
+    bottom: -220px;
+
+    background: #743cff;
+
+    animation: glowTwo 10s ease-in-out infinite alternate;
+}
+
+@keyframes glowOne {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, 80px);
+    }
+}
+
+@keyframes glowTwo {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-80px, -100px);
+    }
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    padding: 0 7%;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        rgba(7, 7, 11, .75);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .06);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #fff;
+
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(255, 23, 79, .25);
+
+    transition: .3s;
+}
+
+.logo:hover .logo-icon {
+    transform:
+        rotate(-8deg)
+        scale(1.08);
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.logo-name strong {
+    font-size: 17px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.logo-name span {
+    margin-top: 5px;
+
+    color: #ff3d68;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+}
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.nav-links a {
+    padding: 11px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #777;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+
+    background:
+        rgba(255,255,255,.05);
+
+    transform:
+        translateY(-2px);
+}
+
+.nav-links a.active {
+    color: #ff3d68;
+
+    background:
+        rgba(255,23,79,.08);
+}
+
+.nav-links i {
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.menu-btn {
+    width: 44px;
+    height: 44px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    cursor: pointer;
+}
+
+.menu-btn span {
+    width: 20px;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #fff;
+
+    transition: .3s;
+}
+
+.menu-btn.active span:nth-child(1) {
+    transform:
+        translateY(7px)
+        rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.music-page {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding:
+        150px 5% 90px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.music-hero {
+    text-align: center;
+
+    padding-bottom: 60px;
+}
+
+.small-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    animation:
+        fadeDown .8s ease both;
+}
+
+.small-title span {
+    width: 35px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #8135ff
+        );
+}
+
+.music-hero h1 {
+    margin-top: 25px;
+
+    font-size:
+        clamp(55px, 8vw, 95px);
+
+    line-height: .95;
+
+    font-weight: 900;
+
+    letter-spacing: -6px;
+
+    animation:
+        titleIn .9s ease both;
+}
+
+.music-hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #ff5076,
+            #8135ff
+        );
+
+
+    -webkit-text-fill-color: transparent;
+}
+
+.music-hero p {
+    margin-top: 22px;
+
+    color: #666;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    animation:
+        fadeUp 1s .2s ease both;
+}
+
+
+/* =====================================================
+   SONG CARD
+===================================================== */
+
+.song-card {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    min-height: 470px;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.015)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0,0,0,.4);
+
+    backdrop-filter: blur(20px);
+
+    animation:
+        cardIn 1s .2s ease both;
+
+    transition: .4s;
+}
+
+.song-card:hover {
+    border-color:
+        rgba(255,23,79,.18);
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.5),
+        0 0 50px
+        rgba(255,23,79,.05);
+}
+
+
+/* =====================================================
+   ALBUM ART
+===================================================== */
+
+.album-art {
+    min-height: 470px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,23,79,.15),
+            transparent 55%
+        );
+}
+
+.album-art::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,23,79,.18);
+
+    animation:
+        circleRotate
+        12s linear infinite;
+}
+
+.album-art::after {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed
+        rgba(129,53,255,.18);
+
+    animation:
+        circleRotateReverse
+        18s linear infinite;
+}
+
+
+/* =====================================================
+   RECORD
+===================================================== */
+
+.record {
+    position: relative;
+
+    width: 270px;
+    height: 270px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #08080b 0px,
+            #08080b 5px,
+            #121218 6px,
+            #08080b 8px
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.65);
+
+    animation:
+        recordSpin
+        12s linear infinite;
+}
+
+.record::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.record::after {
+    content: "";
+
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    box-shadow:
+        0 0 40px
+        rgba(255,23,79,.25);
+}
+
+.record-center {
+    position: relative;
+
+    z-index: 2;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    font-size: 12px;
+}
+
+@keyframes recordSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes circleRotate {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes circleRotateReverse {
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* =====================================================
+   SONG CONTENT
+===================================================== */
+
+.song-content {
+    padding: 55px 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label {
+    color: #ff3d68;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.song-content h2 {
+    margin-top: 10px;
+
+    font-size: 40px;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.song-type {
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+.line {
+    width: 55px;
+    height: 2px;
+
+    margin:
+        25px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #8135ff
+        );
+}
+
+
+/* =====================================================
+   YOUTUBE PLAYER
+===================================================== */
+
+.player {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: #000;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.35);
+}
+
+.player iframe {
+    width: 100%;
+    height: 230px;
+
+    display: block;
+
+    border: 0;
+}
+
+
+/* =====================================================
+   SONG BOTTOM
+===================================================== */
+
+.song-bottom {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    color: #555;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+.song-bottom span {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.song-bottom i {
+    color: #ff174f;
+}
+
+
+/* =====================================================
+   MUSIC MESSAGE
+===================================================== */
+
+.music-message {
+    padding: 90px 20px 30px;
+
+    text-align: center;
+}
+
+.music-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    color: #ff3d68;
+
+    background:
+        rgba(255,23,79,.08);
+
+    border:
+        1px solid
+        rgba(255,23,79,.15);
+
+    box-shadow:
+        0 15px 40px
+        rgba(255,23,79,.08);
+}
+
+.music-message h2 {
+    margin-top: 22px;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+.music-message p {
+    margin-top: 9px;
+
+    color: #555;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding:
+        28px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    color: #555;
+
+    font-size: 9px;
+}
+
+.footer-logo {
+    color: #fff;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.footer-logo i {
+    margin-right: 6px;
+
+    color: #ff174f;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes cardIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(40px)
+            scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .song-card {
+        grid-template-columns: 1fr;
+    }
+
+    .album-art {
+        min-height: 350px;
+    }
+
+    .song-content {
+        padding: 40px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* Navbar */
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+
+        left: 5%;
+        right: 5%;
+
+        padding: 9px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 3px;
+
+        border-radius: 17px;
+
+        background:
+            rgba(9,9,14,.98);
+
+        border:
+            1px solid
+            rgba(255,255,255,.08);
+
+        backdrop-filter: blur(20px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-12px);
+
+        transition: .3s;
+    }
+
+    .nav-links.show {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 13px 15px;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+
+    /* Main */
+
+    .music-page {
+        padding:
+            120px 5% 60px;
+    }
+
+
+    /* Hero */
+
+    .music-hero {
+        padding-bottom: 40px;
+    }
+
+    .small-title {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+    .music-hero h1 {
+        font-size: 52px;
+
+        letter-spacing: -4px;
+    }
+
+    .music-hero p {
+        font-size: 10px;
+    }
+
+
+    /* Card */
+
+    .song-card {
+        border-radius: 22px;
+    }
+
+    .album-art {
+        min-height: 300px;
+    }
+
+    .record {
+        width: 210px;
+        height: 210px;
+    }
+
+    .album-art::before {
+        width: 240px;
+        height: 240px;
+    }
+
+    .album-art::after {
+        width: 290px;
+        height: 290px;
+    }
+
+
+    /* Content */
+
+    .song-content {
+        padding: 30px 22px 25px;
+    }
+
+    .song-content h2 {
+        font-size: 30px;
+    }
+
+    .player iframe {
+        height: 190px;
+    }
+
+
+    /* Bottom */
+
+    .song-bottom {
+        gap: 12px;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* Message */
+
+    .music-message {
+        padding:
+            65px 15px 20px;
+    }
+
+    .music-message h2 {
+        font-size: 21px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding:
+            25px 5%;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .logo-name strong {
+        font-size: 14px;
+    }
+
+    .logo-name span {
+        font-size: 6px;
+    }
+
+    .music-hero h1 {
+        font-size: 44px;
+    }
+
+    .record {
+        width: 180px;
+        height: 180px;
+    }
+
+    .album-art {
+        min-height: 260px;
+    }
+
+    .player iframe {
+        height: 175px;
+    }
+
+    .song-content h2 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07070b;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            #ff174f,
+            #8135ff
+        );
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection {
+    background: #ff174f;
+    color: #fff;
+}
+</style>
+<body>
+
+    <!-- Background -->
+
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+            <div class="logo-name">
+                <strong>VANSH</strong>
+                <span>ANTIL</span>
+            </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a href="new.html">
+                <i class="fa-solid fa-fire"></i>
+                New Release
+            </a>
+
+            <a href="song.html" class="active">
+                <i class="fa-solid fa-headphones"></i>
+                Music
+            </a>
+
+            <a href="about.html">
+                <i class="fa-solid fa-user"></i>
+                About
+            </a>
+
+        </div>
+
+
+        <button class="menu-btn" id="menuBtn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+
+
+    <!-- Main -->
+
+    <main class="music-page">
+
+        <section class="music-hero">
+
+            <div class="small-title">
+                <span></span>
+                VANSH ANTIL
+                <span></span>
+            </div>
+
+
+            <h1>
+                Music That
+                <span>Feels.</span>
+            </h1>
+
+
+            <p>
+                Listen to the latest song by Vansh Antil.
+            </p>
+
+        </section>
+
+
+        <!-- Song Card -->
+
+        <section class="song-card">
+
+            <div class="album-art">
+
+                <div class="record">
+
+                    <div class="record-center">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="song-content">
+
+                <span class="label">
+                    LATEST SONG
+                </span>
+
+
+                <h2>
+                    Vansh Antil
+                </h2>
+
+
+                <p class="song-type">
+                    Love Song
+                </p>
+
+
+                <div class="line"></div>
+
+
+                <div class="player">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/RgipSS5Q_WI?rel=0"
+                        title="Vansh Antil Song"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+
+                <div class="song-bottom">
+
+                    <span>
+                        <i class="fa-solid fa-heart"></i>
+                        Love Song
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-music"></i>
+                        Vansh Antil
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Bottom Text -->
+
+        <section class="music-message">
+
+            <div class="music-icon">
+                <i class="fa-solid fa-headphones"></i>
+            </div>
+
+            <h2>
+                Put Your Headphones On.
+            </h2>
+
+            <p>
+                Close your eyes, turn up the volume
+                and feel the music.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-logo">
+            <i class="fa-solid fa-music"></i>
+            VANSH ANTIL
+        </div>
+
+        <p>
+            Music • Love • Feelings
+        </p>
+
+        <p>
+            © 2026 Vansh Antil
+        </p>
+
+    </footer>
+
+
+    <script>
+        /* =====================================================
+   VANSH ANTIL - MUSIC PAGE JS
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =================================================
+       MOBILE NAVBAR
+    ================================================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuBtn && navLinks) {
+
+        menuBtn.addEventListener("click", () => {
+
+            menuBtn.classList.toggle("active");
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+        /* Close menu after clicking a link */
+
+        const links =
+            navLinks.querySelectorAll("a");
+
+        links.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menuBtn.classList.remove("active");
+
+                navLinks.classList.remove("show");
+
+            });
+
+        });
+
+    }
+
+
+    /* =================================================
+       YOUTUBE PLAYER
+    ================================================= */
+
+    const iframe =
+        document.querySelector(".player iframe");
+
+    if (iframe) {
+
+        iframe.addEventListener("load", () => {
+
+            iframe.style.opacity = "1";
+
+        });
+
+    }
+
+
+    /* =================================================
+       SCROLL REVEAL
+    ================================================= */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".song-card, .music-message"
+        );
+
+
+    revealElements.forEach(element => {
+
+        element.classList.add("reveal");
+
+    });
+
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+    /* =================================================
+       NAVBAR SHADOW ON SCROLL
+    ================================================= */
+
+    const navbar =
+        document.querySelector(".navbar");
+
+
+    function navbarScroll() {
+
+        if (!navbar) return;
+
+
+        if (window.scrollY > 30) {
+
+            navbar.style.background =
+                "rgba(7,7,11,.94)";
+
+            navbar.style.boxShadow =
+                "0 10px 40px rgba(0,0,0,.25)";
+
+        } else {
+
+            navbar.style.background =
+                "rgba(7,7,11,.75)";
+
+            navbar.style.boxShadow =
+                "none";
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        navbarScroll
+    );
+
+
+    /* =================================================
+       RECORD SPEED
+    ================================================= */
+
+    const record =
+        document.querySelector(".record");
+
+
+    if (record) {
+
+        let isVisible = true;
+
+
+        const recordObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        isVisible =
+                            entry.isIntersecting;
+
+                    });
+
+                }
+            );
+
+
+        recordObserver.observe(record);
+
+
+        /*
+           Pause record animation when page
+           section is not visible.
+        */
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (!isVisible) {
+
+                    record.style.animationPlayState =
+                        "paused";
+
+                } else {
+
+                    record.style.animationPlayState =
+                        "running";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       MOUSE EFFECT ON SONG CARD
+    ================================================= */
+
+    const songCard =
+        document.querySelector(".song-card");
+
+
+    if (
+        songCard &&
+        window.innerWidth > 900
+    ) {
+
+        songCard.addEventListener(
+            "mousemove",
+            event => {
+
+                const rect =
+                    songCard.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX - rect.left;
+
+                const y =
+                    event.clientY - rect.top;
+
+
+                const centerX =
+                    rect.width / 2;
+
+                const centerY =
+                    rect.height / 2;
+
+
+                const rotateX =
+                    (centerY - y) / 100;
+
+
+                const rotateY =
+                    (x - centerX) / 130;
+
+
+                songCard.style.transform =
+                    `
+                    perspective(1200px)
+                    rotateX(${rotateX}deg)
+                    rotateY(${rotateY}deg)
+                    translateY(-3px)
+                    `;
+
+            }
+        );
+
+
+        songCard.addEventListener(
+            "mouseleave",
+            () => {
+
+                songCard.style.transform =
+                    "perspective(1200px) rotateX(0) rotateY(0) translateY(0)";
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       CURRENT YEAR
+    ================================================= */
+
+    const footerYear =
+        document.querySelector(
+            "footer p:last-child"
+        );
+
+
+    if (footerYear) {
+
+        footerYear.textContent =
+            `© ${new Date().getFullYear()} Vansh Antil`;
+
+    }
+
+
+    /* =================================================
+       PAGE LOADED
+    ================================================= */
+
+    document.body.classList.add(
+        "page-loaded"
+    );
+
+});
+    </script>
+
+</body>
+
+</html>

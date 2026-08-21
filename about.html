@@ -1,0 +1,2497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About | Vansh Antil</title>
+
+    <link rel="stylesheet" href="about.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<style>
+    /* =====================================================
+   VANSH ANTIL - ABOUT PAGE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Montserrat", sans-serif;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(255, 23, 79, .12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(125, 55, 255, .12),
+            transparent 35%
+        ),
+        #07070b;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.bg-glow {
+    position: fixed;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    filter: blur(150px);
+
+    opacity: .16;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.glow-one {
+    top: -200px;
+    left: -170px;
+
+    background: #ff174f;
+
+    animation:
+        glowOne 9s ease-in-out infinite alternate;
+}
+
+.glow-two {
+    right: -180px;
+    bottom: -200px;
+
+    background: #7d3cff;
+
+    animation:
+        glowTwo 11s ease-in-out infinite alternate;
+}
+
+@keyframes glowOne {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, 90px);
+    }
+}
+
+@keyframes glowTwo {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-90px, -80px);
+    }
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    background:
+        rgba(7, 7, 11, .78);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #fff;
+
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(255, 23, 79, .25);
+
+    transition: .3s;
+}
+
+.logo:hover .logo-icon {
+    transform:
+        rotate(-8deg)
+        scale(1.08);
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.logo-name strong {
+    font-size: 17px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.logo-name span {
+    margin-top: 5px;
+
+    color: #ff3d68;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+}
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.nav-links a {
+    padding: 11px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #777;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+
+    background:
+        rgba(255,255,255,.05);
+
+    transform:
+        translateY(-2px);
+}
+
+.nav-links a.active {
+    color: #ff3d68;
+
+    background:
+        rgba(255,23,79,.08);
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.menu-btn {
+    width: 44px;
+    height: 44px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    cursor: pointer;
+}
+
+.menu-btn span {
+    width: 20px;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #fff;
+
+    transition: .3s;
+}
+
+.menu-btn.active span:nth-child(1) {
+    transform:
+        translateY(7px)
+        rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+    width: 100%;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.about-hero {
+    max-width: 1200px;
+
+    min-height: 720px;
+
+    margin: auto;
+
+    padding:
+        150px 7% 80px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 420px;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.hero-text {
+    animation:
+        heroText 1s ease both;
+}
+
+.small-title {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #777;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.small-title span {
+    width: 35px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #8135ff
+        );
+}
+
+.hero-text h1 {
+    margin-top: 25px;
+
+    font-size:
+        clamp(55px, 7vw, 90px);
+
+    line-height: .95;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+}
+
+.hero-text h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #ff5478,
+            #8135ff
+        );
+
+    
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    max-width: 480px;
+
+    margin-top: 25px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   HERO RECORD
+===================================================== */
+
+.hero-record {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 420px;
+
+    position: relative;
+}
+
+.hero-record::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,23,79,.15);
+
+    animation:
+        rotateCircle
+        15s linear infinite;
+}
+
+.hero-record::after {
+    content: "";
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed
+        rgba(129,53,255,.13);
+
+    animation:
+        rotateReverse
+        20s linear infinite;
+}
+
+.record {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #07070a 0,
+            #07070a 5px,
+            #141419 6px,
+            #07070a 8px
+        );
+
+    box-shadow:
+        0 35px 80px
+        rgba(0,0,0,.65);
+
+    animation:
+        recordSpin
+        12s linear infinite;
+
+    z-index: 2;
+}
+
+.record::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.record::after {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    box-shadow:
+        0 0 45px
+        rgba(255,23,79,.25);
+}
+
+.record-center {
+    position: relative;
+
+    z-index: 3;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+}
+
+@keyframes recordSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCircle {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateReverse {
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* =====================================================
+   STORY SECTION
+===================================================== */
+
+.story-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding:
+        90px 7%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+}
+
+.section-heading > span {
+    color: #ff174f;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+.story-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.story-card {
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    transition:
+        .4s ease;
+}
+
+.story-card:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(255,23,79,.2);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.3);
+}
+
+.story-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    color: #ff3d68;
+
+    background:
+        rgba(255,23,79,.08);
+
+    margin-bottom: 25px;
+}
+
+.story-card h3 {
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+.story-card p {
+    margin-top: 14px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   FAMILY SECTION
+===================================================== */
+
+.family-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding:
+        100px 7%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.section-number {
+    color: #ff3d68;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.family-content h2 {
+    margin-top: 18px;
+
+    font-size: 48px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.family-content h2 span {
+    display: block;
+
+    color: #777;
+}
+
+.family-content p {
+    max-width: 500px;
+
+    margin-top: 22px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+}
+
+.family-content strong {
+    color: #aaa;
+}
+
+
+/* =====================================================
+   PARENTS
+===================================================== */
+
+.parents {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.parent-card {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    transition: .35s;
+}
+
+.parent-card:hover {
+    transform:
+        translateY(-7px);
+
+    background:
+        rgba(255,23,79,.06);
+
+    border-color:
+        rgba(255,23,79,.2);
+}
+
+.parent-card i {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    color: #ff3d68;
+
+    background:
+        rgba(255,23,79,.08);
+}
+
+.parent-card span {
+    display: block;
+
+    margin-top: 20px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.parent-card h3 {
+    margin-top: 7px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   FIRST SONG
+===================================================== */
+
+.first-song {
+    max-width: 1100px;
+
+    margin:
+        50px auto 0;
+
+    padding:
+        70px;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 35px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,23,79,.09),
+            rgba(129,53,255,.07)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.first-song-number {
+    font-size: 55px;
+
+    font-weight: 900;
+
+    color: rgba(255,255,255,.08);
+}
+
+.first-song-content > span {
+    color: #ff3d68;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.first-song-content h2 {
+    margin-top: 12px;
+
+    font-size: 48px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+}
+
+.first-song-content p {
+    max-width: 650px;
+
+    margin-top: 18px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+}
+
+.first-song-content strong {
+    color: #bbb;
+}
+
+.listen-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 28px;
+
+    padding: 13px 20px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 12px 30px
+        rgba(255,23,79,.18);
+
+    transition: .3s;
+}
+
+.listen-btn:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(255,23,79,.28);
+}
+
+
+/* =====================================================
+   NEW JOURNEY
+===================================================== */
+
+.new-journey {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding:
+        110px 7%;
+}
+
+.journey-top > span {
+    color: #ff3d68;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.journey-top h2 {
+    margin-top: 18px;
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+}
+
+.journey-top h2 span {
+    color: #777;
+}
+
+.journey-card {
+    max-width: 750px;
+
+    margin:
+        50px auto 0;
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.heart-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    border-radius: 18px;
+
+    color: #ff174f;
+
+    background:
+        rgba(255,23,79,.08);
+
+    animation:
+        heartBeat 1.8s ease-in-out infinite;
+}
+
+.journey-card h3 {
+    margin-top: 22px;
+
+    font-size: 23px;
+
+    font-weight: 800;
+}
+
+.journey-card p {
+    margin-top: 17px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+}
+
+@keyframes heartBeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   SUPPORT
+===================================================== */
+
+.support-section {
+    max-width: 900px;
+
+    margin:
+        30px auto 100px;
+
+    padding:
+        80px 30px;
+
+    text-align: center;
+}
+
+.support-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    border-radius: 18px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    box-shadow:
+        0 15px 40px
+        rgba(255,23,79,.2);
+}
+
+.support-section > span {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #666;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.support-section h2 {
+    margin-top: 17px;
+
+    font-size: 45px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+}
+
+.support-section h2 span {
+    background:
+        linear-gradient(
+            90deg,
+            #ff174f,
+            #8135ff
+        );
+
+    
+    -webkit-text-fill-color: transparent;
+}
+
+.support-section p {
+    max-width: 550px;
+
+    margin:
+        20px auto 0;
+
+    color: #666;
+
+    font-size: 11px;
+
+    line-height: 1.9;
+}
+
+.support-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 28px;
+
+    padding: 14px 22px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    transition: .3s;
+}
+
+.support-btn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #ff174f,
+            #8135ff
+        );
+
+    border-color: transparent;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding:
+        28px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    color: #555;
+
+    font-size: 9px;
+}
+
+.footer-logo {
+    color: #fff;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.footer-logo i {
+    margin-right: 6px;
+
+    color: #ff174f;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .about-hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 30px;
+    }
+
+    .hero-text {
+        order: 1;
+    }
+
+    .hero-record {
+        order: 2;
+    }
+
+    .small-title {
+        justify-content: center;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .family-section {
+        grid-template-columns: 1fr;
+    }
+
+    .family-content {
+        text-align: center;
+    }
+
+    .family-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .first-song {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+
+        left: 5%;
+        right: 5%;
+
+        padding: 9px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 3px;
+
+        border-radius: 17px;
+
+        background:
+            rgba(9,9,14,.98);
+
+        border:
+            1px solid
+            rgba(255,255,255,.08);
+
+        backdrop-filter: blur(20px);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform:
+            translateY(-12px);
+
+        transition: .3s;
+    }
+
+    .nav-links.show {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 13px 15px;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+
+    /* Hero */
+
+    .about-hero {
+        min-height: auto;
+
+        padding:
+            125px 6% 70px;
+    }
+
+    .hero-text h1 {
+        font-size: 54px;
+
+        letter-spacing: -4px;
+    }
+
+    .hero-text p {
+        font-size: 11px;
+    }
+
+    .hero-record {
+        min-height: 340px;
+    }
+
+    .record {
+        width: 220px;
+        height: 220px;
+    }
+
+    .record::after {
+        width: 75px;
+        height: 75px;
+    }
+
+    .hero-record::before {
+        width: 270px;
+        height: 270px;
+    }
+
+    .hero-record::after {
+        width: 320px;
+        height: 320px;
+    }
+
+
+    /* Story */
+
+    .story-section {
+        padding:
+            65px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .story-card {
+        padding: 28px;
+    }
+
+
+    /* Family */
+
+    .family-section {
+        padding:
+            70px 6%;
+
+        gap: 40px;
+    }
+
+    .family-content h2 {
+        font-size: 40px;
+    }
+
+    .parents {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* First Song */
+
+    .first-song {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+
+        padding: 35px 25px;
+
+        border-radius: 22px;
+    }
+
+    .first-song-number {
+        font-size: 35px;
+    }
+
+    .first-song-content h2 {
+        font-size: 38px;
+    }
+
+
+    /* Journey */
+
+    .new-journey {
+        padding:
+            75px 6%;
+    }
+
+    .journey-top h2 {
+        font-size: 42px;
+
+        letter-spacing: -3px;
+    }
+
+    .journey-card {
+        padding: 30px 22px;
+    }
+
+
+    /* Support */
+
+    .support-section {
+        padding:
+            60px 20px;
+
+        margin-bottom: 50px;
+    }
+
+    .support-section h2 {
+        font-size: 35px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding:
+            25px 5%;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .logo-name strong {
+        font-size: 14px;
+    }
+
+    .logo-name span {
+        font-size: 6px;
+    }
+
+    .hero-text h1 {
+        font-size: 45px;
+    }
+
+    .family-content h2 {
+        font-size: 34px;
+    }
+
+    .parents {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-top h2 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07070b;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            #ff174f,
+            #8135ff
+        );
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection {
+    color: #fff;
+
+    background: #ff174f;
+}
+</style>
+
+<body>
+
+
+    <!-- Background -->
+
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <a href="index.html"
+           class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+
+            <div class="logo-name">
+
+                <strong>VANSH</strong>
+
+                <span>ANTIL</span>
+
+            </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                Home
+
+            </a>
+
+
+            <a href="new.html">
+
+                <i class="fa-solid fa-fire"></i>
+
+                New Release
+
+            </a>
+
+
+            <a href="song.html">
+
+                <i class="fa-solid fa-headphones"></i>
+
+                Music
+
+            </a>
+
+
+            <a href="about.htmlSS"
+               class="active">
+
+                <i class="fa-solid fa-user"></i>
+
+                About
+
+            </a>
+
+        </div>
+
+
+        <button class="menu-btn"
+                id="menuBtn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- HERO -->
+
+    <main>
+
+
+        <section class="about-hero">
+
+            <div class="hero-text">
+
+                <span class="small-title">
+
+                    <span></span>
+
+                    THE STORY BEHIND THE MUSIC
+
+                    <span></span>
+
+                </span>
+
+
+                <h1>
+
+                    Meet
+
+                    <span>
+                        Vansh Antil
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    A young artist from a small village,
+                    carrying a big dream through music.
+
+                </p>
+
+            </div>
+
+
+            <div class="hero-record">
+
+                <div class="record">
+
+                    <div class="record-center">
+
+                        <i class="fa-solid fa-music"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTRO -->
+
+        <section class="story-section">
+
+            <div class="section-heading">
+
+                <span>01</span>
+
+                <h2>
+                    Where It All Started
+                </h2>
+
+            </div>
+
+
+            <div class="story-grid">
+
+                <div class="story-card">
+
+                    <div class="story-icon">
+
+                        <i class="fa-solid fa-house"></i>
+
+                    </div>
+
+                    <h3>
+                        Palri, Sonipat
+                    </h3>
+
+                    <p>
+
+                        Vansh Antil comes from Palri,
+                        a small village near Sonipat.
+                        Away from the big music studios,
+                        his journey started with nothing
+                        more than a dream and a love for music.
+
+                    </p>
+
+                </div>
+
+
+                <div class="story-card">
+
+                    <div class="story-icon">
+
+                        <i class="fa-solid fa-pen-nib"></i>
+
+                    </div>
+
+                    <h3>
+                        Music Since Childhood
+                    </h3>
+
+                    <p>
+
+                        Vansh started writing songs
+                        when he was still a child.
+                        What started as a simple passion
+                        slowly became something he wanted
+                        to turn into his future.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FAMILY -->
+
+        <section class="family-section">
+
+            <div class="family-content">
+
+                <span class="section-number">
+                    02 — THE PEOPLE BEHIND THE DREAM
+                </span>
+
+
+                <h2>
+                    His Family
+                    <span>Believed First.</span>
+                </h2>
+
+
+                <p>
+
+                    Vansh shared his dream with his parents
+                    when he was in 10th class.
+
+                    Instead of stopping him,
+                    they chose to support him.
+
+                </p>
+
+
+                <p>
+
+                    His father
+
+                    <strong>
+                        Bhagat Singh
+                    </strong>
+
+                    and his mother
+
+                    <strong>
+                        Suman Tushir
+                    </strong>
+
+                    stood beside him and encouraged
+                    him to follow his passion.
+
+                </p>
+
+            </div>
+
+
+            <div class="parents">
+
+                <div class="parent-card">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>
+                        Father
+                    </span>
+
+                    <h3>
+                        Bhagat Singh
+                    </h3>
+
+                </div>
+
+
+                <div class="parent-card">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>
+                        Mother
+                    </span>
+
+                    <h3>
+                        Suman Tushir
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FIRST SONG -->
+
+        <section class="first-song">
+
+            <div class="first-song-number">
+                03
+            </div>
+
+
+            <div class="first-song-content">
+
+                <span>
+                    THE FIRST STEP
+                </span>
+
+
+                <h2>
+                    Way To Hell
+                </h2>
+
+
+                <p>
+
+                    With no professional equipment
+                    and no big studio behind him,
+                    Vansh uploaded his first song
+                    <strong>"Way To Hell"</strong>
+                    on YouTube.
+
+                </p>
+
+
+                <p>
+
+                    It wasn't about having the perfect
+                    setup. It was about finally taking
+                    the first step.
+
+                </p>
+
+
+                <a href="music.html"
+                   class="listen-btn">
+
+                    <i class="fa-solid fa-play"></i>
+
+                    Listen To Music
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- NEW JOURNEY -->
+
+        <section class="new-journey">
+
+            <div class="journey-top">
+
+                <span>
+                    04 — TODAY
+                </span>
+
+                <h2>
+                    A New Song.
+                    <br>
+
+                    <span>
+                        A New Beginning.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="journey-card">
+
+                <div class="heart-icon">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </div>
+
+
+                <h3>
+                    This One Is For Love.
+                </h3>
+
+
+                <p>
+
+                    Vansh is now bringing a new love song
+                    to his listeners.
+
+                    Maybe he doesn't have a huge team
+                    or millions of followers yet,
+                    but he has something more important —
+                    the courage to keep creating.
+
+                </p>
+
+
+                <p>
+
+                    Sometimes independent artists don't get
+                    the promotion they deserve.
+
+                    But every listen, every like,
+                    every share and every new listener
+                    can help a small artist move one
+                    step closer to his dream.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SUPPORT -->
+
+        <section class="support-section">
+
+            <div class="support-icon">
+
+                <i class="fa-solid fa-headphones"></i>
+
+            </div>
+
+
+            <span>
+                SUPPORT THE JOURNEY
+            </span>
+
+
+            <h2>
+
+                Give The Music
+                <span>A Chance.</span>
+
+            </h2>
+
+
+            <p>
+
+                You don't need millions of followers
+                to start something.
+
+                Sometimes you just need one person
+                who listens.
+
+            </p>
+
+
+            <a href="new-release.html"
+               class="support-btn">
+
+                <i class="fa-solid fa-music"></i>
+
+                Discover The New Song
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <i class="fa-solid fa-music"></i>
+
+            VANSH ANTIL
+
+        </div>
+
+
+        <p>
+            Music • Love • Dreams
+        </p>
+
+
+        <p>
+            © 2026 Vansh Antil
+        </p>
+
+    </footer>
+
+
+
+    <script>
+        /* =====================================================
+   VANSH ANTIL - ABOUT PAGE JS
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (menuBtn && navLinks) {
+
+        menuBtn.addEventListener("click", () => {
+
+            menuBtn.classList.toggle("active");
+
+            navLinks.classList.toggle("show");
+
+        });
+
+
+        /* Close menu when link is clicked */
+
+        const navItems =
+            navLinks.querySelectorAll("a");
+
+        navItems.forEach(item => {
+
+            item.addEventListener("click", () => {
+
+                menuBtn.classList.remove("active");
+
+                navLinks.classList.remove("show");
+
+            });
+
+        });
+
+    }
+
+
+    /* =================================================
+       NAVBAR ON SCROLL
+    ================================================= */
+
+    const navbar =
+        document.querySelector(".navbar");
+
+    function updateNavbar() {
+
+        if (!navbar) return;
+
+        if (window.scrollY > 40) {
+
+            navbar.style.background =
+                "rgba(7,7,11,.95)";
+
+            navbar.style.boxShadow =
+                "0 12px 40px rgba(0,0,0,.25)";
+
+        } else {
+
+            navbar.style.background =
+                "rgba(7,7,11,.78)";
+
+            navbar.style.boxShadow =
+                "none";
+
+        }
+
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateNavbar
+    );
+
+    updateNavbar();
+
+
+    /* =================================================
+       SCROLL REVEAL
+    ================================================= */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".story-card, " +
+            ".family-content, " +
+            ".parent-card, " +
+            ".first-song, " +
+            ".journey-card, " +
+            ".support-section"
+        );
+
+
+    revealElements.forEach(element => {
+
+        element.style.opacity = "0";
+
+        element.style.transform =
+            "translateY(35px)";
+
+        element.style.transition =
+            "opacity .8s ease, transform .8s ease";
+
+    });
+
+
+    const revealObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* =================================================
+       STORY CARDS DELAY
+    ================================================= */
+
+    const storyCards =
+        document.querySelectorAll(
+            ".story-card"
+        );
+
+    storyCards.forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 0.12}s`;
+
+    });
+
+
+    /* =================================================
+       PARENT CARDS DELAY
+    ================================================= */
+
+    const parentCards =
+        document.querySelectorAll(
+            ".parent-card"
+        );
+
+    parentCards.forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 0.15}s`;
+
+    });
+
+
+    /* =================================================
+       RECORD PARALLAX
+    ================================================= */
+
+    const record =
+        document.querySelector(".hero-record");
+
+    if (record && window.innerWidth > 700) {
+
+        window.addEventListener(
+            "mousemove",
+            event => {
+
+                const x =
+                    (event.clientX /
+                    window.innerWidth - .5);
+
+                const y =
+                    (event.clientY /
+                    window.innerHeight - .5);
+
+
+                record.style.transform =
+                    `
+                    translate(
+                        ${x * 15}px,
+                        ${y * 15}px
+                    )
+                    `;
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       RECORD PAUSE WHEN NOT VISIBLE
+    ================================================= */
+
+    const vinyl =
+        document.querySelector(".record");
+
+    if (vinyl) {
+
+        const recordObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            vinyl.style.animationPlayState =
+                                "running";
+
+                        } else {
+
+                            vinyl.style.animationPlayState =
+                                "paused";
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.1
+                }
+            );
+
+
+        recordObserver.observe(vinyl);
+
+    }
+
+
+    /* =================================================
+       BUTTON RIPPLE EFFECT
+    ================================================= */
+
+    const buttons =
+        document.querySelectorAll(
+            ".listen-btn, .support-btn"
+        );
+
+
+    buttons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function(event) {
+
+                const ripple =
+                    document.createElement("span");
+
+                const rect =
+                    this.getBoundingClientRect();
+
+
+                const size =
+                    Math.max(
+                        rect.width,
+                        rect.height
+                    );
+
+
+                ripple.style.width =
+                    `${size}px`;
+
+                ripple.style.height =
+                    `${size}px`;
+
+                ripple.style.position =
+                    "absolute";
+
+                ripple.style.borderRadius =
+                    "50%";
+
+                ripple.style.background =
+                    "rgba(255,255,255,.18)";
+
+                ripple.style.transform =
+                    "scale(0)";
+
+                ripple.style.pointerEvents =
+                    "none";
+
+                ripple.style.left =
+                    `${event.clientX - rect.left - size / 2}px`;
+
+                ripple.style.top =
+                    `${event.clientY - rect.top - size / 2}px`;
+
+                ripple.style.animation =
+                    "buttonRipple .6s ease-out";
+
+
+                this.style.position =
+                    "relative";
+
+                this.style.overflow =
+                    "hidden";
+
+
+                this.appendChild(ripple);
+
+
+                setTimeout(() => {
+
+                    ripple.remove();
+
+                }, 600);
+
+            }
+        );
+
+    });
+
+
+    /* =================================================
+       FOOTER YEAR
+    ================================================= */
+
+    const footer =
+        document.querySelector("footer");
+
+    if (footer) {
+
+        const footerText =
+            footer.querySelector(
+                "p:last-child"
+            );
+
+        if (footerText) {
+
+            footerText.textContent =
+                `© ${new Date().getFullYear()} Vansh Antil`;
+
+        }
+
+    }
+
+
+    /* =================================================
+       PAGE LOADED
+    ================================================= */
+
+    document.body.classList.add(
+        "page-loaded"
+    );
+
+});
+    </script>
+
+</body>
+
+</html>
